@@ -1,0 +1,30 @@
+[submodule "repos/github-code-search.user.js"]
+	path = repos/github-code-search.user.js
+	url = git@github.com:skratchdot/github-code-search.user.js.git
+[submodule "repos/github-editor-theme.user.js"]
+	path = repos/github-editor-theme.user.js
+	url = git@github.com:skratchdot/github-editor-theme.user.js.git
+[submodule "repos/github-fork-count.user.js"]
+	path = repos/github-fork-count.user.js
+	url = git@github.com:skratchdot/github-fork-count.user.js.git
+[submodule "repos/github-get-missing-descriptions.user.js"]
+	path = repos/github-get-missing-descriptions.user.js
+	url = git@github.com:skratchdot/github-get-missing-descriptions.user.js.git
+[submodule "repos/github-gh-pages-link.user.js"]
+	path = repos/github-gh-pages-link.user.js
+	url = git@github.com:skratchdot/github-gh-pages-link.user.js.git
+[submodule "repos/github-pull-request-links.user.js"]
+	path = repos/github-pull-request-links.user.js
+	url = git@github.com:skratchdot/github-pull-request-links.user.js.git
+[submodule "repos/github-repo-counts.user.js"]
+	path = repos/github-repo-counts.user.js
+	url = git@github.com:skratchdot/github-repo-counts.user.js.git
+[submodule "repos/github-repo-filter-info.user.js"]
+	path = repos/github-repo-filter-info.user.js
+	url = git@github.com:skratchdot/github-repo-filter-info.user.js.git
+[submodule "repos/github-twitter-link.user.js"]
+	path = repos/github-twitter-link.user.js
+	url = git@github.com:skratchdot/github-twitter-link.user.js.git
+[submodule "scripts"]
+	path = scripts
+	url = git@gist.github.com:5604120.git
