@@ -21,11 +21,13 @@
 // @updateURL      https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
 // @version        1.0
 // ==/UserScript==
+/*global SKRATCHDOT, document */
 
 // This code is only going to run for browsers that don't support the @require annotation
 // when executing userscripts
-if (typeof SKRATCHDOT === 'undefined') {
+if ('undefined' === typeof SKRATCHDOT) {
 	var addScript = function (src) {
+		'use strict';
 		var script = document.createElement('script');
 		script.src = src;
 		document.body.appendChild(script);
