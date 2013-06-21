@@ -19,7 +19,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
 // @updateURL      https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
-// @version        1.1
+// @version        1.2
 // ==/UserScript==
 /*global SKRATCHDOT, document */
 
