@@ -8,7 +8,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
 // @updateURL      https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
-// @version        2.0.1
+// @version        2.0.2
 // ==/UserScript==
 
 
@@ -166,8 +166,9 @@ n.onPage=function(){var e,t,n;n=function(){0===o("#"+s).length&&o(".column.three
 return"settings"!==e})}},getInitialState:function(){return{lastAction:Date.now()};
 
 },onEnableButton:function(e){a.togglePluginEnabled(e),this.setState({lastAction:Date.now()
-})},render:function(){var e=this;return r.createElement("div",null,r.createElement("h1",null,"Settings  ",r.createElement("small",{
-style:{fontSize:"small",color:"#333"}},"Github Enhancement Suite (version ",u.version,")")),r.createElement("hr",null),this.props.pluginNames.map(function(n){
+})},render:function(){var e=this;return r.createElement("div",null,r.createElement("h1",null,"Settings  ",r.createElement("a",{
+style:{fontSize:"small"},href:"https://github.com/skratchdot/github-enhancement-suite"
+},"Github Enhancement Suite (version ",u.version,")")),r.createElement("hr",null),this.props.pluginNames.map(function(n){
 var o=i[n];return r.createElement("div",null,r.createElement(t,{key:o.name,name:o.name,
 description:o.description,enabled:a.isPluginEnabled(n),onEnableButton:e.onEnableButton.bind(e,n)
 }),r.createElement("hr",null))}))}}),t=r.createClass({displayName:"PluginDisplay",
@@ -5739,7 +5740,7 @@ return n[i++]});console.warn(a);try{throw new Error(a)}catch(u){}}}),t.exports=o
 },{"./emptyFunction":141,_process:14}],182:[function(e,t,n){t.exports=e("./lib/React");
 
 },{"./lib/React":55}],183:[function(e,t,n){t.exports={name:"github-enhancement-suite",
-version:"2.0.1",description:"A collection of userscripts to add functionality when browsing github.com",
+version:"2.0.2",description:"A collection of userscripts to add functionality when browsing github.com",
 main:"index.js",scripts:{test:"gulp test"},author:"skratchdot",license:"MIT",bugs:{
 url:"https://github.com/skratchdot/github-enhancement-suite/issues"},homepage:"https://github.com/skratchdot/github-enhancement-suite",
 repository:{type:"git",url:"https://github.com/skratchdot/github-enhancement-suite"

@@ -8,7 +8,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
 // @updateURL      https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
-// @version        2.0.1
+// @version        2.0.2
 // ==/UserScript==
 
 
@@ -770,7 +770,7 @@ exports.onPage = function () {
 					React.createElement("h1", null, 
 						"Settings" + ' ' +
 						" ", 
-						React.createElement("small", {style: {fontSize: 'small', color: '#333'}}, 
+						React.createElement("a", {style: {fontSize: 'small'}, href: "https://github.com/skratchdot/github-enhancement-suite"}, 
 							"Github Enhancement Suite (version ", packageInfo.version, ")"
 						)
 					), 
@@ -41855,7 +41855,7 @@ module.exports = require('./lib/React');
 },{"./lib/React":55}],183:[function(require,module,exports){
 module.exports={
   "name": "github-enhancement-suite",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A collection of userscripts to add functionality when browsing github.com",
   "main": "index.js",
   "scripts": {
