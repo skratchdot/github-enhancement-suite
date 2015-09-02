@@ -1,9 +1,9 @@
 'use strict';
 var gulp = require('gulp');
 var ejs = require('ejs');
+var exec = require('child_process').exec;
 var fs = require('fs');
 var insert = require('gulp-insert');
-var jshint = require('gulp-jshint');
 var nodeunit = require('gulp-nodeunit');
 var size = require('gulp-size');
 var uglify = require('gulp-uglify');
@@ -34,9 +34,16 @@ gulp.task('plugins', function () {
 		'"use strict";'
 	];
 	fs.readdirSync('./lib/plugins').forEach(function (file) {
+		var pluginKey;
 		file = file.replace('.js', '');
 		plugins.push(file);
-		contents.push('exports["' + file + '"] = require("../plugins/' + file + '");');
+		pluginKey = file;
+		if (pluginKey.indexOf('-') >= 0) {
+			pluginKey = '["' + pluginKey + '"]';
+		} else {
+			pluginKey = '.' + pluginKey;
+		}
+		contents.push('exports' + pluginKey + ' = require("../plugins/' + file + '");');
 	});
 	contents.push('exports.pluginNames = ' + JSON.stringify(plugins) + ';\n');
 	fs.writeFileSync('./lib/core/plugins.js', contents.join('\n'), 'utf-8');
@@ -66,9 +73,23 @@ gulp.task('userscript', function () {
 });
 
 gulp.task('lint', function () {
-	gulp.src(['./lib/**/*.js', './test/**/*.js'])
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'));
+	exec([
+			'node',
+			'./node_modules/jsxhint/cli.js',
+			//'--show-non-errors',
+			'--exclude-path',
+			'./.jshintignore',
+			'--config',
+			'./.jshint',
+			'./lib/**/*.js',
+			'./test',
+			'./gulpfile.js'
+		].join(' '),
+	function (err, stdout, stderr) {
+		if (stdout) {
+			console.log(stdout);
+		}
+	});
 });
 
 gulp.task('test', function () {
