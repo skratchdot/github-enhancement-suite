@@ -1,6 +1,6 @@
 {
   "name": "github-enhancement-suite",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A collection of userscripts to add functionality when browsing github.com",
   "main": "index.js",
   "scripts": {

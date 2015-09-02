@@ -8,7 +8,7 @@
 // @icon           http://skratchdot.com/favicon.ico
 // @downloadURL    https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
 // @updateURL      https://github.com/skratchdot/github-enhancement-suite/raw/master/enhancement-suite.user.js
-// @version        2.0.0
+// @version        2.0.1
 // ==/UserScript==
 
 
@@ -723,6 +723,7 @@ var React = require('react');
 var jQuery = require('jquery');
 var plugins = require('../core/plugins');
 var utils = require('../core/utils');
+var packageInfo = require('../../package.json');
 // config
 var containerId = 'github-enhancement-suite-settings';
 var appId = containerId + '-app';
@@ -766,7 +767,13 @@ exports.onPage = function () {
 			var $this = this;
 			return (
 				React.createElement("div", null, 
-					React.createElement("h1", null, "Settings"), 
+					React.createElement("h1", null, 
+						"Settings" + ' ' +
+						" ", 
+						React.createElement("small", {style: {fontSize: 'small', color: '#333'}}, 
+							"Github Enhancement Suite (version ", packageInfo.version, ")"
+						)
+					), 
 					React.createElement("hr", null), 
 					this.props.pluginNames.map(function (pluginName) {
 						var plugin = plugins[pluginName];
@@ -831,7 +838,7 @@ exports.onPage = function () {
 	React.render(React.createElement(App, null), document.getElementById(appId));
 };
 
-},{"../core/plugins":1,"../core/utils":3,"jquery":23,"react":182}],12:[function(require,module,exports){
+},{"../../package.json":183,"../core/plugins":1,"../core/utils":3,"jquery":23,"react":182}],12:[function(require,module,exports){
 'use strict';
 var jQuery = require('jquery');
 var utils = require('../core/utils');
@@ -41845,4 +41852,53 @@ module.exports = warning;
 },{"./emptyFunction":141,"_process":14}],182:[function(require,module,exports){
 module.exports = require('./lib/React');
 
-},{"./lib/React":55}]},{},[5]);
+},{"./lib/React":55}],183:[function(require,module,exports){
+module.exports={
+  "name": "github-enhancement-suite",
+  "version": "2.0.1",
+  "description": "A collection of userscripts to add functionality when browsing github.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "skratchdot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skratchdot/github-enhancement-suite/issues"
+  },
+  "homepage": "https://github.com/skratchdot/github-enhancement-suite",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skratchdot/github-enhancement-suite"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "d3": "^3.5.6",
+    "ejs": "^2.3.3",
+    "gulp": "^3.9.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-nodeunit": "0.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.0.0",
+    "gulp-uglify": "^1.2.0",
+    "jquery": "^2.1.4",
+    "jsxhint": "^0.15.1",
+    "lodash.debounce": "^3.1.1",
+    "lodash.throttle": "^3.0.4",
+    "mutation-summary": "0.0.0",
+    "object-path-get": "0.0.2",
+    "object-path-set": "0.0.1",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "through2": "^2.0.0",
+    "vinyl-transform": "^1.0.0"
+  },
+  "keywords": [
+    "github",
+    "extension",
+    "browser",
+    "enhancement"
+  ]
+}
+
+},{}]},{},[5]);
