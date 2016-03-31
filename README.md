@@ -48,6 +48,7 @@ when browsing [github.com](https://github.com/).
 - [Github Discussion](https://github.com/isaacs/github/issues/128)
 - [Reddit Enhancement Suite](https://github.com/honestbleeps/Reddit-Enhancement-Suite)
 - [Octotree](https://github.com/buunguyen/octotree)
+- [Refined Github](https://github.com/sindresorhus/refined-github)
 - https://github.com/jayson/github-enhancement-suite
 - https://github.com/EvanDotPro/github-enhancement-suite
 - https://github.com/mduan/Github-Enhancement-Suite
